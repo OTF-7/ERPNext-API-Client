@@ -1,6 +1,6 @@
 package com.example.apitest.doc_list;
 
-public class doc {
+public class Doc {
     private String name;
 
     public String getName() {

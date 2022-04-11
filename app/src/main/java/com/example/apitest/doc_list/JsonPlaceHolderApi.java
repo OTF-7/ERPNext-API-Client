@@ -7,5 +7,5 @@ import retrofit2.http.GET;
 
 public interface JsonPlaceHolderApi {
     @GET("Employee")
-    Call<List<doc>> getDocs();
+    Call<List<Doc>> getDocs();
 }
