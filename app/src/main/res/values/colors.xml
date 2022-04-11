@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Project colors -->
+    <color name="CG_Blue">#227c9d</color>
+    <color name="Light_See_Green">#17c3b2</color>
+    <color name="Maximum_Yellow_Red">#ffcb77</color>
+    <color name="Light_Coral">#fe6d73</color>
+    <color name="Floral_White">#fef9ef</color>
+    <color name="Charcoal">#283845</color>
+
+</resources>

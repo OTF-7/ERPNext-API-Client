@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/Floral_White"
+        tools:context=".MainActivity">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/main_toolbar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/Charcoal"
+            android:minHeight="56dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:title="ERPNext API Client"
+            app:titleTextColor="@color/Floral_White" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/url_field"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            android:hint="URL"
+            android:padding="4dp"
+            android:soundEffectsEnabled="true"
+            android:textColorHint="@color/Floral_White"
+            app:endIconMode="clear_text"
+            app:endIconTint="@color/Light_Coral"
+            app:errorEnabled="true"
+            app:helperTextEnabled="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/main_toolbar"
+            app:startIconContentDescription="user icon">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/fields_shape"
+                android:textColor="@color/Floral_White"
+                android:textColorHint="@color/Floral_White" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/api_key_field"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="API Key"
+            android:padding="4dp"
+            android:soundEffectsEnabled="true"
+            android:textColorHint="@color/Floral_White"
+            app:endIconMode="clear_text"
+            app:endIconTint="@color/Light_Coral"
+            app:errorEnabled="true"
+            app:helperTextEnabled="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/url_field"
+            app:startIconContentDescription="user icon">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/fields_shape"
+                android:textColor="@color/Floral_White"
+                android:textColorHint="@color/Floral_White" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/secret_key_field"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="Secret Key"
+            android:padding="4dp"
+            android:textColorHint="@color/Floral_White"
+            app:endIconMode="password_toggle"
+            app:endIconTint="@color/Floral_White"
+            app:errorEnabled="true"
+            app:helperTextEnabled="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/api_key_field"
+            app:startIconContentDescription="password icon">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/fields_shape"
+                android:inputType="textPassword"
+                android:soundEffectsEnabled="true"
+                android:textColor="@color/Floral_White"
+                android:textColorHint="@color/Floral_White" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/has_ssl_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:checked="true"
+            android:text="https"
+            app:layout_constraintStart_toStartOf="@+id/secret_key_field"
+            app:layout_constraintTop_toBottomOf="@+id/secret_key_field" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/connect_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/tab_indictor"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="Connect"
+            android:textColor="@color/Floral_White"
+            app:layout_constraintEnd_toEndOf="@+id/secret_key_field"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/secret_key_field"
+            app:layout_constraintTop_toBottomOf="@+id/has_ssl_switch" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
