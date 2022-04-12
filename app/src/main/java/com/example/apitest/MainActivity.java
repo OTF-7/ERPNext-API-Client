@@ -8,20 +8,19 @@ import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
 import com.example.apitest.databinding.ActivityMainBinding;
 import com.example.apitest.databinding.ApiConnectedDialogBinding;
 import com.example.apitest.doc_list.Doc;
 import com.example.apitest.doc_list.DocListActivity;
 import com.example.apitest.doc_list.JsonPlaceHolderApi;
+import com.example.apitest.doc_list.JsonResponse;
+import com.google.gson.JsonElement;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
@@ -32,39 +31,14 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends Activity {
     ActivityMainBinding mBinding;
+    JsonPlaceHolderApi jsonPlaceHolderApi;
+    List<Doc> docs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mBinding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(mBinding.getRoot());
-
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://restaurant.partner-cons.com/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-
-        JsonPlaceHolderApi jsonPlaceHolderApi = retrofit.create(JsonPlaceHolderApi.class);
-        Call<List<Doc>> call = jsonPlaceHolderApi.getDocs();
-        call.enqueue(new Callback<List<Doc>>() {
-            @Override
-            public void onResponse(Call<List<Doc>> call, retrofit2.Response<List<Doc>> response) {
-                if (!response.isSuccessful()) {
-                    Toast.makeText(getBaseContext(), "Code: " + response.code(), Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                List<Doc> docs = response.body();
-                for (Doc doc : docs) {
-                    String name = doc.getName();
-                    Toast.makeText(getBaseContext(), name, Toast.LENGTH_SHORT).show();
-                }
-            }
-
-            @Override
-            public void onFailure(Call<List<Doc>> call, Throwable t) {
-                Toast.makeText(getBaseContext(), t.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-        });
 
         mBinding.hasSslSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -80,27 +54,9 @@ public class MainActivity extends Activity {
             public void onClick(View v) {
                 if (validate())
                     return;
-                // Instantiate the RequestQueue.
-                RequestQueue queue = Volley.newRequestQueue(MainActivity.this);
-                String url = "https://www.google.com";
+                connect();
+                getDocs();
 
-                // Request a string response from the provided URL.
-                StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
-                        new Response.Listener<String>() {
-                            @Override
-                            public void onResponse(String response) {
-                                // Display the first 500 characters of the response string.
-                                Toast.makeText(MainActivity.this, "Response is: " + response.substring(0, 500), Toast.LENGTH_SHORT).show();
-                            }
-                        }, new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(MainActivity.this, "That didn't work!", Toast.LENGTH_SHORT).show();
-                    }
-                });
-
-                // Add the request to the RequestQueue.
-                queue.add(stringRequest);
                 if (Objects.requireNonNull(mBinding.apiKeyField.getEditText()).getText().toString().equals("123") &&
                         Objects.requireNonNull(mBinding.secretKeyField.getEditText()).getText().toString().equals("123")) {
                     ApiConnectedDialogBinding dialogBinding = ApiConnectedDialogBinding.inflate(LayoutInflater.from(MainActivity.this));
@@ -123,7 +79,7 @@ public class MainActivity extends Activity {
     }
 
     private boolean validate() {
-        String url = mBinding.urlField.getEditText().getText().toString();
+        String url = Objects.requireNonNull(mBinding.urlField.getEditText()).getText().toString();
         if (url.startsWith("http"))
             if (url.startsWith("https")) {
                 mBinding.hasSslSwitch.setChecked(true);
@@ -135,5 +91,48 @@ public class MainActivity extends Activity {
         mBinding.urlField.getEditText().setText(url);
 
         return false;
+    }
+
+    private void getDocs() {
+        Call<JsonResponse> call = jsonPlaceHolderApi.getDoc();
+        call.enqueue(new Callback<JsonResponse>() {
+            @Override
+            public void onResponse(@NonNull Call<JsonResponse> call, @NonNull retrofit2.Response<JsonResponse> response) {
+                if (!response.isSuccessful()) {
+                    Toast.makeText(getBaseContext(), "Code: " + response.code(), Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                JsonResponse jsonResponse = response.body();
+                assert jsonResponse != null;
+                docs = new ArrayList<>(Arrays.asList(jsonResponse.getData()));
+                StringBuilder text = new StringBuilder();
+                for (Doc doc : docs){
+                    text.append(doc.getName());
+                }
+                Toast.makeText(getBaseContext(), text, Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<JsonResponse> call, @NonNull Throwable t) {
+                Toast.makeText(getBaseContext(), t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void connect(){
+        String protocol = "";
+        if (mBinding.hasSslSwitch.isChecked())
+            protocol = "https://";
+        else
+            protocol = "http://";
+        String url = mBinding.urlField.getEditText().getText().toString();
+        if (!url.endsWith("/"))
+            url += "/";
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(protocol + url) // "restaurant.partner-cons.com/"
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        jsonPlaceHolderApi = retrofit.create(JsonPlaceHolderApi.class);
     }
 }
