@@ -1,0 +1,114 @@
+[
+    {
+        "merged": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\build\\intermediates\\merged_res\\debug\\raw_quiz_bump.json.flat",
+        "source": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\src\\main\\res\\raw\\quiz_bump.json"
+    },
+    {
+        "merged": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_doc_list.xml.flat",
+        "source": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\src\\main\\res\\layout\\activity_doc_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\build\\intermediates\\merged_res\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\build\\intermediates\\merged_res\\debug\\raw_checkbox_animation.json.flat",
+        "source": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\src\\main\\res\\raw\\checkbox_animation.json"
+    },
+    {
+        "merged": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_back.xml.flat",
+        "source": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\src\\main\\res\\drawable\\ic_back.xml"
+    },
+    {
+        "merged": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_employees.xml.flat",
+        "source": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\src\\main\\res\\layout\\activity_employees.xml"
+    },
+    {
+        "merged": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\build\\intermediates\\merged_res\\debug\\raw_submit_button.json.flat",
+        "source": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\src\\main\\res\\raw\\submit_button.json"
+    },
+    {
+        "merged": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\build\\intermediates\\merged_res\\debug\\layout_api_connected_dialog.xml.flat",
+        "source": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\src\\main\\res\\layout\\api_connected_dialog.xml"
+    },
+    {
+        "merged": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\build\\intermediates\\merged_res\\debug\\raw_submit_button_2.json.flat",
+        "source": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\src\\main\\res\\raw\\submit_button_2.json"
+    },
+    {
+        "merged": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\build\\intermediates\\merged_res\\debug\\raw_fingerprint.json.flat",
+        "source": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\src\\main\\res\\raw\\fingerprint.json"
+    },
+    {
+        "merged": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\build\\intermediates\\merged_res\\debug\\drawable_tab_indictor.xml.flat",
+        "source": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\src\\main\\res\\drawable\\tab_indictor.xml"
+    },
+    {
+        "merged": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\build\\intermediates\\merged_res\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\build\\intermediates\\merged_res\\debug\\layout_recyclerview_doc_item.xml.flat",
+        "source": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\src\\main\\res\\layout\\recyclerview_doc_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\build\\intermediates\\merged_res\\debug\\drawable_fields_shape.xml.flat",
+        "source": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\src\\main\\res\\drawable\\fields_shape.xml"
+    },
+    {
+        "merged": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\build\\intermediates\\merged_res\\debug\\raw_checked_radio_button.json.flat",
+        "source": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\src\\main\\res\\raw\\checked_radio_button.json"
+    },
+    {
+        "merged": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\build\\intermediates\\merged_res\\debug\\drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v24\\ic_launcher_foreground.xml"
+    }
+]

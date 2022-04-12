@@ -13,26 +13,25 @@ import androidx.appcompat.app.AlertDialog;
 
 import com.example.apitest.databinding.ActivityMainBinding;
 import com.example.apitest.databinding.ApiConnectedDialogBinding;
-import com.example.apitest.doc_list.Doc;
 import com.example.apitest.doc_list.DocListActivity;
-import com.example.apitest.doc_list.JsonPlaceHolderApi;
-import com.example.apitest.doc_list.JsonResponse;
-import com.google.gson.JsonElement;
+import com.example.apitest.doc_list.interfaces.JsonDocTypeListApi;
+import com.example.apitest.doc_list.interfaces.JsonUserDataApi;
+import com.example.apitest.doc_list.models.UserData;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Objects;
 
 import retrofit2.Call;
 import retrofit2.Callback;
+import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends Activity {
     ActivityMainBinding mBinding;
-    JsonPlaceHolderApi jsonPlaceHolderApi;
-    List<Doc> docs;
+    JsonDocTypeListApi mJsonDocTypeListApi;
+    JsonUserDataApi mJsonUserDataApi;
+    String url = "", apiKey = "", secretKey = "";
+    boolean hasSsl = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,45 +39,85 @@ public class MainActivity extends Activity {
         mBinding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(mBinding.getRoot());
 
-        mBinding.hasSslSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        mBinding.hasSslSwitch.setOnCheckedChangeListener(
+                new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked)
+                if (isChecked) {
                     mBinding.hasSslSwitch.setText("https");
-                else
+                    hasSsl = true;
+                }
+
+                else {
                     mBinding.hasSslSwitch.setText("http");
+                    hasSsl = false;
+                }
             }
         });
+
+        mBinding.demoButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                hasSsl = true;
+                mBinding.hasSslSwitch.setChecked(hasSsl);
+                url = "restaurant.partner-cons.com/";
+                mBinding.urlField.getEditText().setText(url);
+                apiKey = "172b12330085465";
+                mBinding.apiKeyField.getEditText().setText(apiKey);
+                secretKey = "4378c88d03f0514";
+                mBinding.secretKeyField.getEditText().setText(secretKey);
+            }
+        });
+
         mBinding.connectButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (validate())
+                if (!isConnected())
                     return;
-                connect();
-                getDocs();
-
-                if (Objects.requireNonNull(mBinding.apiKeyField.getEditText()).getText().toString().equals("123") &&
-                        Objects.requireNonNull(mBinding.secretKeyField.getEditText()).getText().toString().equals("123")) {
-                    ApiConnectedDialogBinding dialogBinding = ApiConnectedDialogBinding.inflate(LayoutInflater.from(MainActivity.this));
-                    AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(MainActivity.this);
-                    dialogBuilder.setView(dialogBinding.getRoot());
-                    AlertDialog dialog = dialogBuilder.create();
-                    dialog.show();
-                    dialogBinding.connectedOkButton.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            dialog.dismiss();
-                            startActivity(new Intent(MainActivity.this, DocListActivity.class));
-                        }
-                    });
-                }
+//                getDoc();
+                getUserData();
             }
         });
 
 
     }
 
-    private boolean validate() {
+    private boolean isConnected() {
+        if (isValidated()) {
+            Retrofit retrofit;
+            String protocol = "";
+            if (mBinding.hasSslSwitch.isChecked())
+                protocol = "https://";
+            else
+                protocol = "http://";
+
+            url = Objects.requireNonNull(mBinding.urlField.getEditText())
+                    .getText().toString();
+            if (!url.endsWith("/"))
+                url += "/";
+
+            apiKey = Objects.requireNonNull(mBinding.apiKeyField.getEditText())
+                    .getText().toString();
+
+            secretKey = Objects.requireNonNull(mBinding.secretKeyField.getEditText())
+                    .getText().toString();
+
+            retrofit = new Retrofit.Builder()
+                    .baseUrl(protocol + url)
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
+//            mJsonDocTypeListApi = retrofit.create(JsonDocTypeListApi.class);
+            mJsonUserDataApi = retrofit.create(JsonUserDataApi.class);
+            return true;
+        } else {
+            Toast.makeText(getBaseContext(),
+                    "Something went wrong!!\nCheck URL, API key, Secret Key," +
+                    " \nand Transfer Protocol (http/https)", Toast.LENGTH_LONG).show();
+            return false;
+        }
+    }
+
+    private boolean isValidated() {
         String url = Objects.requireNonNull(mBinding.urlField.getEditText()).getText().toString();
         if (url.startsWith("http"))
             if (url.startsWith("https")) {
@@ -89,50 +128,59 @@ public class MainActivity extends Activity {
                 url = url.substring(7);
             }
         mBinding.urlField.getEditText().setText(url);
-
-        return false;
+        return url.length() > 12;
     }
 
-    private void getDocs() {
-        Call<JsonResponse> call = jsonPlaceHolderApi.getDoc();
-        call.enqueue(new Callback<JsonResponse>() {
+    private void getUserData() {
+        Call<UserData> call = mJsonUserDataApi.getUserData();
+        call.enqueue(new Callback<UserData>() {
             @Override
-            public void onResponse(@NonNull Call<JsonResponse> call, @NonNull retrofit2.Response<JsonResponse> response) {
+            public void onResponse(@NonNull Call<UserData> call,
+                                   @NonNull Response<UserData> response) {
                 if (!response.isSuccessful()) {
-                    Toast.makeText(getBaseContext(), "Code: " + response.code(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getBaseContext(), "Code: " +
+                            response.code(), Toast.LENGTH_SHORT).show();
                     return;
                 }
-                JsonResponse jsonResponse = response.body();
-                assert jsonResponse != null;
-                docs = new ArrayList<>(Arrays.asList(jsonResponse.getData()));
-                StringBuilder text = new StringBuilder();
-                for (Doc doc : docs){
-                    text.append(doc.getName());
-                }
-                Toast.makeText(getBaseContext(), text, Toast.LENGTH_SHORT).show();
+                UserData data = response.body();
+
+                ApiConnectedDialogBinding dialogBinding =
+                        ApiConnectedDialogBinding.inflate(LayoutInflater.from(MainActivity.this));
+                AlertDialog.Builder dialogBuilder =
+                        new AlertDialog.Builder(MainActivity.this);
+                dialogBuilder.setView(dialogBinding.getRoot());
+                AlertDialog dialog = dialogBuilder.create();
+
+                dialogBinding.connectedText.setText(dialogBinding.connectedText.getText()
+                        .toString()
+                        + " As " + data.getMessage());
+
+                dialog.show();
+                dialogBinding.connectedOkButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog.dismiss();
+                        Intent intent = new Intent(MainActivity.this,
+                                DocListActivity.class);
+                        intent.putExtra("url",url);
+                        intent.putExtra("apiKey",apiKey);
+                        intent.putExtra("secretKey",secretKey);
+                        intent.putExtra("hasSsl",hasSsl);
+                        startActivity(intent);
+                    }
+                });
+
+                Toast.makeText(getBaseContext(), data.getMessage().toString(),
+                        Toast.LENGTH_SHORT).show();
             }
 
             @Override
-            public void onFailure(@NonNull Call<JsonResponse> call, @NonNull Throwable t) {
-                Toast.makeText(getBaseContext(), t.getMessage(), Toast.LENGTH_SHORT).show();
+            public void onFailure(Call<UserData> call, Throwable t) {
+                Toast.makeText(getBaseContext(), t.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
+
     }
 
-    private void connect(){
-        String protocol = "";
-        if (mBinding.hasSslSwitch.isChecked())
-            protocol = "https://";
-        else
-            protocol = "http://";
-        String url = mBinding.urlField.getEditText().getText().toString();
-        if (!url.endsWith("/"))
-            url += "/";
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(protocol + url) // "restaurant.partner-cons.com/"
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
 
-        jsonPlaceHolderApi = retrofit.create(JsonPlaceHolderApi.class);
-    }
 }

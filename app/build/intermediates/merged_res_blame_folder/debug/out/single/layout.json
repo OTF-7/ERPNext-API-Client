@@ -1,0 +1,30 @@
+[
+    {
+        "merged": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_main.xml",
+        "source": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_employees.xml",
+        "source": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\src\\main\\res\\layout\\activity_employees.xml"
+    },
+    {
+        "merged": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\recyclerview_doc_item.xml",
+        "source": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\src\\main\\res\\layout\\recyclerview_doc_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_doc_list.xml",
+        "source": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\src\\main\\res\\layout\\activity_doc_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\simple_spinner_item.xml",
+        "source": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\src\\main\\res\\layout\\simple_spinner_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\api_connected_dialog.xml",
+        "source": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\src\\main\\res\\layout\\api_connected_dialog.xml"
+    },
+    {
+        "merged": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\simple_spinner_dropdown_item.xml",
+        "source": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\src\\main\\res\\layout\\simple_spinner_dropdown_item.xml"
+    }
+]

@@ -1,0 +1,106 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.apitest"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+8-->C:\Users\OmarTaha\AndroidStudioProjects\apitest\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="31" />
+9-->C:\Users\OmarTaha\AndroidStudioProjects\apitest\app\src\main\AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->C:\Users\OmarTaha\AndroidStudioProjects\apitest\app\src\main\AndroidManifest.xml:6:5-66
+11-->C:\Users\OmarTaha\AndroidStudioProjects\apitest\app\src\main\AndroidManifest.xml:6:22-64
+12
+13    <application
+13-->C:\Users\OmarTaha\AndroidStudioProjects\apitest\app\src\main\AndroidManifest.xml:8:5-39:19
+14        android:allowBackup="true"
+14-->C:\Users\OmarTaha\AndroidStudioProjects\apitest\app\src\main\AndroidManifest.xml:9:9-35
+15        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+15-->[androidx.core:core:1.7.0] C:\Users\OmarTaha\.gradle\caches\transforms-3\a6b50727ad2e8d6c44f6dc9adb916fe9\transformed\core-1.7.0\AndroidManifest.xml:24:18-86
+16        android:debuggable="true"
+17        android:icon="@mipmap/ic_launcher"
+17-->C:\Users\OmarTaha\AndroidStudioProjects\apitest\app\src\main\AndroidManifest.xml:10:9-43
+18        android:label="@string/app_name"
+18-->C:\Users\OmarTaha\AndroidStudioProjects\apitest\app\src\main\AndroidManifest.xml:11:9-41
+19        android:roundIcon="@mipmap/ic_launcher_round"
+19-->C:\Users\OmarTaha\AndroidStudioProjects\apitest\app\src\main\AndroidManifest.xml:12:9-54
+20        android:supportsRtl="true"
+20-->C:\Users\OmarTaha\AndroidStudioProjects\apitest\app\src\main\AndroidManifest.xml:13:9-35
+21        android:testOnly="true"
+22        android:theme="@style/Theme.ApiTest" >
+22-->C:\Users\OmarTaha\AndroidStudioProjects\apitest\app\src\main\AndroidManifest.xml:14:9-45
+23        <activity
+23-->C:\Users\OmarTaha\AndroidStudioProjects\apitest\app\src\main\AndroidManifest.xml:15:9-17:40
+24            android:name="com.example.apitest.doc_list.DocListActivity"
+24-->C:\Users\OmarTaha\AndroidStudioProjects\apitest\app\src\main\AndroidManifest.xml:16:13-53
+25            android:exported="false" />
+25-->C:\Users\OmarTaha\AndroidStudioProjects\apitest\app\src\main\AndroidManifest.xml:17:13-37
+26        <activity
+26-->C:\Users\OmarTaha\AndroidStudioProjects\apitest\app\src\main\AndroidManifest.xml:18:9-20:40
+27            android:name="com.example.apitest.tasks.TasksActivity"
+27-->C:\Users\OmarTaha\AndroidStudioProjects\apitest\app\src\main\AndroidManifest.xml:19:13-48
+28            android:exported="false" />
+28-->C:\Users\OmarTaha\AndroidStudioProjects\apitest\app\src\main\AndroidManifest.xml:20:13-37
+29        <activity
+29-->C:\Users\OmarTaha\AndroidStudioProjects\apitest\app\src\main\AndroidManifest.xml:21:9-23:40
+30            android:name="com.example.apitest.invoices.InvoicesActivity"
+30-->C:\Users\OmarTaha\AndroidStudioProjects\apitest\app\src\main\AndroidManifest.xml:22:13-54
+31            android:exported="false" />
+31-->C:\Users\OmarTaha\AndroidStudioProjects\apitest\app\src\main\AndroidManifest.xml:23:13-37
+32        <activity
+32-->C:\Users\OmarTaha\AndroidStudioProjects\apitest\app\src\main\AndroidManifest.xml:24:9-26:40
+33            android:name="com.example.apitest.items.ItemsActivity"
+33-->C:\Users\OmarTaha\AndroidStudioProjects\apitest\app\src\main\AndroidManifest.xml:25:13-48
+34            android:exported="false" />
+34-->C:\Users\OmarTaha\AndroidStudioProjects\apitest\app\src\main\AndroidManifest.xml:26:13-37
+35        <activity
+35-->C:\Users\OmarTaha\AndroidStudioProjects\apitest\app\src\main\AndroidManifest.xml:27:9-29:40
+36            android:name="com.example.apitest.employees.EmployeesActivity"
+36-->C:\Users\OmarTaha\AndroidStudioProjects\apitest\app\src\main\AndroidManifest.xml:28:13-56
+37            android:exported="false" />
+37-->C:\Users\OmarTaha\AndroidStudioProjects\apitest\app\src\main\AndroidManifest.xml:29:13-37
+38        <activity
+38-->C:\Users\OmarTaha\AndroidStudioProjects\apitest\app\src\main\AndroidManifest.xml:30:9-38:20
+39            android:name="com.example.apitest.MainActivity"
+39-->C:\Users\OmarTaha\AndroidStudioProjects\apitest\app\src\main\AndroidManifest.xml:31:13-41
+40            android:exported="true" >
+40-->C:\Users\OmarTaha\AndroidStudioProjects\apitest\app\src\main\AndroidManifest.xml:32:13-36
+41            <intent-filter>
+41-->C:\Users\OmarTaha\AndroidStudioProjects\apitest\app\src\main\AndroidManifest.xml:33:13-37:29
+42                <action android:name="android.intent.action.MAIN" />
+42-->C:\Users\OmarTaha\AndroidStudioProjects\apitest\app\src\main\AndroidManifest.xml:34:17-69
+42-->C:\Users\OmarTaha\AndroidStudioProjects\apitest\app\src\main\AndroidManifest.xml:34:25-66
+43
+44                <category android:name="android.intent.category.LAUNCHER" />
+44-->C:\Users\OmarTaha\AndroidStudioProjects\apitest\app\src\main\AndroidManifest.xml:36:17-77
+44-->C:\Users\OmarTaha\AndroidStudioProjects\apitest\app\src\main\AndroidManifest.xml:36:27-74
+45            </intent-filter>
+46        </activity>
+47
+48        <provider
+48-->[androidx.emoji2:emoji2:1.0.0] C:\Users\OmarTaha\.gradle\caches\transforms-3\9a13dbe0f8ad7f65f79c3bb94577cd59\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
+49            android:name="androidx.startup.InitializationProvider"
+49-->[androidx.emoji2:emoji2:1.0.0] C:\Users\OmarTaha\.gradle\caches\transforms-3\9a13dbe0f8ad7f65f79c3bb94577cd59\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:27:13-67
+50            android:authorities="com.example.apitest.androidx-startup"
+50-->[androidx.emoji2:emoji2:1.0.0] C:\Users\OmarTaha\.gradle\caches\transforms-3\9a13dbe0f8ad7f65f79c3bb94577cd59\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:28:13-68
+51            android:exported="false" >
+51-->[androidx.emoji2:emoji2:1.0.0] C:\Users\OmarTaha\.gradle\caches\transforms-3\9a13dbe0f8ad7f65f79c3bb94577cd59\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:29:13-37
+52            <meta-data
+52-->[androidx.emoji2:emoji2:1.0.0] C:\Users\OmarTaha\.gradle\caches\transforms-3\9a13dbe0f8ad7f65f79c3bb94577cd59\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:31:13-33:52
+53                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+53-->[androidx.emoji2:emoji2:1.0.0] C:\Users\OmarTaha\.gradle\caches\transforms-3\9a13dbe0f8ad7f65f79c3bb94577cd59\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:32:17-75
+54                android:value="androidx.startup" />
+54-->[androidx.emoji2:emoji2:1.0.0] C:\Users\OmarTaha\.gradle\caches\transforms-3\9a13dbe0f8ad7f65f79c3bb94577cd59\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:33:17-49
+55            <meta-data
+55-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\OmarTaha\.gradle\caches\transforms-3\8f4c966f56db8e753f84171da8aa5417\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:31:13-33:52
+56                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+56-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\OmarTaha\.gradle\caches\transforms-3\8f4c966f56db8e753f84171da8aa5417\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:32:17-78
+57                android:value="androidx.startup" />
+57-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\OmarTaha\.gradle\caches\transforms-3\8f4c966f56db8e753f84171da8aa5417\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:33:17-49
+58        </provider>
+59    </application>
+60
+61</manifest>
