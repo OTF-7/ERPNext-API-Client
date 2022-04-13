@@ -141,13 +141,24 @@
 
         <Button
             android:id="@+id/demoButton"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/Widget.MaterialComponents.Button.TextButton"
-            android:textColor="@color/Light_Coral"
             android:text="USE DEMO DATA?"
+            android:textColor="@color/Light_Coral"
             app:layout_constraintEnd_toEndOf="@+id/secret_key_field"
             app:layout_constraintTop_toTopOf="@+id/has_ssl_switch" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/connect_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/secret_key_field" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

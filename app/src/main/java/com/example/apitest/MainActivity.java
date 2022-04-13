@@ -133,10 +133,12 @@ public class MainActivity extends Activity {
 
     private void getUserData() {
         Call<UserData> call = mJsonUserDataApi.getUserData();
+        mBinding.progressBar.setVisibility(View.VISIBLE);
         call.enqueue(new Callback<UserData>() {
             @Override
             public void onResponse(@NonNull Call<UserData> call,
                                    @NonNull Response<UserData> response) {
+                mBinding.progressBar.setVisibility(View.GONE);
                 if (!response.isSuccessful()) {
                     Toast.makeText(getBaseContext(), "Code: " +
                             response.code(), Toast.LENGTH_SHORT).show();
@@ -176,6 +178,7 @@ public class MainActivity extends Activity {
 
             @Override
             public void onFailure(Call<UserData> call, Throwable t) {
+                mBinding.progressBar.setVisibility(View.GONE);
                 Toast.makeText(getBaseContext(), t.getMessage(), Toast.LENGTH_LONG).show();
             }
         });

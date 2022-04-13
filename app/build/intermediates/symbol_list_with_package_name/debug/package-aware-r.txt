@@ -2697,6 +2697,7 @@ id disableIntraAutoTransition
 id disablePostScroll
 id disableScroll
 id disjoint
+id doc_name_textview
 id doc_recyclerview
 id doc_spinner
 id dragAnticlockwise
@@ -2876,6 +2877,8 @@ id percent
 id pin
 id position
 id postLayout
+id progressBar
+id progressBar_docList
 id progress_circular
 id progress_horizontal
 id radio
@@ -2979,7 +2982,6 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
-id textView
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon

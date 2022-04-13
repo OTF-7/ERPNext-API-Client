@@ -4,6 +4,7 @@ package com.example.apitest.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -28,14 +29,18 @@ public final class ActivityDocListBinding implements ViewBinding {
   public final Spinner docSpinner;
 
   @NonNull
+  public final ProgressBar progressBarDocList;
+
+  @NonNull
   public final TextView selectDocumentTextview;
 
   private ActivityDocListBinding(@NonNull ConstraintLayout rootView,
       @NonNull RecyclerView docRecyclerview, @NonNull Spinner docSpinner,
-      @NonNull TextView selectDocumentTextview) {
+      @NonNull ProgressBar progressBarDocList, @NonNull TextView selectDocumentTextview) {
     this.rootView = rootView;
     this.docRecyclerview = docRecyclerview;
     this.docSpinner = docSpinner;
+    this.progressBarDocList = progressBarDocList;
     this.selectDocumentTextview = selectDocumentTextview;
   }
 
@@ -78,6 +83,12 @@ public final class ActivityDocListBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.progressBar_docList;
+      ProgressBar progressBarDocList = ViewBindings.findChildViewById(rootView, id);
+      if (progressBarDocList == null) {
+        break missingId;
+      }
+
       id = R.id.selectDocumentTextview;
       TextView selectDocumentTextview = ViewBindings.findChildViewById(rootView, id);
       if (selectDocumentTextview == null) {
@@ -85,7 +96,7 @@ public final class ActivityDocListBinding implements ViewBinding {
       }
 
       return new ActivityDocListBinding((ConstraintLayout) rootView, docRecyclerview, docSpinner,
-          selectDocumentTextview);
+          progressBarDocList, selectDocumentTextview);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

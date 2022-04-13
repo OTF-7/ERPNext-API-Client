@@ -16,15 +16,7 @@
         "source": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\src\\main\\res\\layout\\activity_doc_list.xml"
     },
     {
-        "merged": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\simple_spinner_item.xml",
-        "source": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\src\\main\\res\\layout\\simple_spinner_item.xml"
-    },
-    {
         "merged": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\api_connected_dialog.xml",
         "source": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\src\\main\\res\\layout\\api_connected_dialog.xml"
-    },
-    {
-        "merged": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\simple_spinner_dropdown_item.xml",
-        "source": "C:\\Users\\OmarTaha\\AndroidStudioProjects\\apitest\\app\\src\\main\\res\\layout\\simple_spinner_dropdown_item.xml"
     }
 ]

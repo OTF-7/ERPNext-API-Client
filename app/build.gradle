@@ -39,6 +39,8 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     //    recycler view
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
+    // card view
+    implementation "androidx.cardview:cardview:1.0.0"
     //    circular image
     implementation 'de.hdodenhof:circleimageview:3.1.0'
     //    lottie animation

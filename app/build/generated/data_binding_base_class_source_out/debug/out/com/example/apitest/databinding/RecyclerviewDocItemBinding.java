@@ -20,12 +20,12 @@ public final class RecyclerviewDocItemBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
-  public final TextView textView;
+  public final TextView docNameTextview;
 
   private RecyclerviewDocItemBinding(@NonNull ConstraintLayout rootView,
-      @NonNull TextView textView) {
+      @NonNull TextView docNameTextview) {
     this.rootView = rootView;
-    this.textView = textView;
+    this.docNameTextview = docNameTextview;
   }
 
   @Override
@@ -55,13 +55,13 @@ public final class RecyclerviewDocItemBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.textView;
-      TextView textView = ViewBindings.findChildViewById(rootView, id);
-      if (textView == null) {
+      id = R.id.doc_name_textview;
+      TextView docNameTextview = ViewBindings.findChildViewById(rootView, id);
+      if (docNameTextview == null) {
         break missingId;
       }
 
-      return new RecyclerviewDocItemBinding((ConstraintLayout) rootView, textView);
+      return new RecyclerviewDocItemBinding((ConstraintLayout) rootView, docNameTextview);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

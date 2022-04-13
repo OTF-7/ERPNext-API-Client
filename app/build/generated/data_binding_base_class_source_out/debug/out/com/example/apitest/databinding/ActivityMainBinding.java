@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.ScrollView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -39,6 +40,9 @@ public final class ActivityMainBinding implements ViewBinding {
   public final Toolbar mainToolbar;
 
   @NonNull
+  public final ProgressBar progressBar;
+
+  @NonNull
   public final TextInputLayout secretKeyField;
 
   @NonNull
@@ -47,13 +51,15 @@ public final class ActivityMainBinding implements ViewBinding {
   private ActivityMainBinding(@NonNull ScrollView rootView, @NonNull TextInputLayout apiKeyField,
       @NonNull AppCompatButton connectButton, @NonNull Button demoButton,
       @NonNull SwitchMaterial hasSslSwitch, @NonNull Toolbar mainToolbar,
-      @NonNull TextInputLayout secretKeyField, @NonNull TextInputLayout urlField) {
+      @NonNull ProgressBar progressBar, @NonNull TextInputLayout secretKeyField,
+      @NonNull TextInputLayout urlField) {
     this.rootView = rootView;
     this.apiKeyField = apiKeyField;
     this.connectButton = connectButton;
     this.demoButton = demoButton;
     this.hasSslSwitch = hasSslSwitch;
     this.mainToolbar = mainToolbar;
+    this.progressBar = progressBar;
     this.secretKeyField = secretKeyField;
     this.urlField = urlField;
   }
@@ -115,6 +121,12 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.progressBar;
+      ProgressBar progressBar = ViewBindings.findChildViewById(rootView, id);
+      if (progressBar == null) {
+        break missingId;
+      }
+
       id = R.id.secret_key_field;
       TextInputLayout secretKeyField = ViewBindings.findChildViewById(rootView, id);
       if (secretKeyField == null) {
@@ -128,7 +140,7 @@ public final class ActivityMainBinding implements ViewBinding {
       }
 
       return new ActivityMainBinding((ScrollView) rootView, apiKeyField, connectButton, demoButton,
-          hasSslSwitch, mainToolbar, secretKeyField, urlField);
+          hasSslSwitch, mainToolbar, progressBar, secretKeyField, urlField);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
