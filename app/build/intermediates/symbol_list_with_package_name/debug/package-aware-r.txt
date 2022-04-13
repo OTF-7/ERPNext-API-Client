@@ -2715,7 +2715,6 @@ id easeOut
 id east
 id edit_query
 id elastic
-id employees_toolbar
 id end
 id endToStart
 id enterAlways
@@ -3116,7 +3115,6 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_doc_list
-layout activity_employees
 layout activity_main
 layout api_connected_dialog
 layout custom_dialog

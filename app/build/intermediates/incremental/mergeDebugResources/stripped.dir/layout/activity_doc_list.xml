@@ -37,6 +37,7 @@
         android:layout_marginStart="16dp"
         android:fontFamily="sans-serif-light"
         android:text="Select a Document Type"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="@+id/doc_spinner"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/doc_spinner" />

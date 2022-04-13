@@ -28,7 +28,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends Activity {
     ActivityMainBinding mBinding;
-    JsonDocTypeListApi mJsonDocTypeListApi;
     JsonUserDataApi mJsonUserDataApi;
     String url = "", apiKey = "", secretKey = "";
     boolean hasSsl = true;
@@ -74,7 +73,6 @@ public class MainActivity extends Activity {
             public void onClick(View v) {
                 if (!isConnected())
                     return;
-//                getDoc();
                 getUserData();
             }
         });
@@ -132,7 +130,8 @@ public class MainActivity extends Activity {
     }
 
     private void getUserData() {
-        Call<UserData> call = mJsonUserDataApi.getUserData();
+        String header = "token " + apiKey + ":" + secretKey;
+        Call<UserData> call = mJsonUserDataApi.getUserData(header);
         mBinding.progressBar.setVisibility(View.VISIBLE);
         call.enqueue(new Callback<UserData>() {
             @Override
@@ -171,9 +170,6 @@ public class MainActivity extends Activity {
                         startActivity(intent);
                     }
                 });
-
-                Toast.makeText(getBaseContext(), data.getMessage().toString(),
-                        Toast.LENGTH_SHORT).show();
             }
 
             @Override

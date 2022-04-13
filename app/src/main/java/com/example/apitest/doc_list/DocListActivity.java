@@ -96,7 +96,8 @@ public class DocListActivity extends AppCompatActivity {
 
     private void getDoc(String documentType) {
         mBinding.progressBarDocList.setVisibility(View.VISIBLE);
-        Call<JsonDocTypeListResponse> call = mJsonDocTypeListApi.getDoc(documentType);
+        String header = "token " + apiKey + ":" + secretKey;
+        Call<JsonDocTypeListResponse> call = mJsonDocTypeListApi.getDoc(documentType, header);
         call.enqueue(new Callback<JsonDocTypeListResponse>() {
             @Override
             public void onResponse(@NonNull Call<JsonDocTypeListResponse> call,

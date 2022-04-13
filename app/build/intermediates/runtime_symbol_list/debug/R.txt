@@ -2714,7 +2714,6 @@ int id easeOut 0x7f0800b5
 int id east 0x7f0800b6
 int id edit_query 0x7f0800b7
 int id elastic 0x7f0800b8
-int id employees_toolbar 0x7f0800b9
 int id end 0x7f0800ba
 int id endToStart 0x7f0800bb
 int id enterAlways 0x7f0800bc
@@ -3115,7 +3114,6 @@ int layout abc_search_view 0x7f0b0019
 int layout abc_select_dialog_material 0x7f0b001a
 int layout abc_tooltip 0x7f0b001b
 int layout activity_doc_list 0x7f0b001c
-int layout activity_employees 0x7f0b001d
 int layout activity_main 0x7f0b001e
 int layout api_connected_dialog 0x7f0b001f
 int layout custom_dialog 0x7f0b0020
